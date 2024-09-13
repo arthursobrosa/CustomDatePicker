@@ -10,6 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     private let datePicker: FakeDatePicker = {
         let datePicker = FakeDatePicker()
+        datePicker.datePickerMode = .time
+        datePicker.date = Date()
         
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         
