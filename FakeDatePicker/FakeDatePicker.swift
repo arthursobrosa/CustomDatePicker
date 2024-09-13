@@ -8,9 +8,9 @@
 import UIKit
 
 class FakeDatePicker: UIDatePicker {
-    override var datePickerMode: UIDatePicker.Mode {
+    override var date: Date {
         didSet {
-            self.dateLabel.text = self.getDateString()
+            self.dateLabel.text = self.getDateString(from: date)
         }
     }
     
@@ -25,9 +25,10 @@ class FakeDatePicker: UIDatePicker {
         return view
     }()
     
-    private let dateLabel: UILabel = {
+    private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .regular)
+        label.text = self.getDateString(from: Date())
         
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -48,11 +49,11 @@ class FakeDatePicker: UIDatePicker {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc private func datePickerDidChange() {
-        self.dateLabel.text = self.getDateString()
+    @objc private func datePickerDidChange(_ sender: UIDatePicker) {
+        self.dateLabel.text = self.getDateString(from: sender.date)
     }
     
-    private func getDateString() -> String {
+    private func getDateString(from date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
         
@@ -68,7 +69,7 @@ class FakeDatePicker: UIDatePicker {
             }
         }
         
-        return dateFormatter.string(from: self.date)
+        return dateFormatter.string(from: date)
     }
 }
 
