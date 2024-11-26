@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  FakeDatePicker
+//  CustomDatePicker
 //
-//  Created by Arthur Sobrosa on 12/09/24.
+//  Created by Arthur Sobrosa on 26/11/24.
 //
 
 import UIKit
