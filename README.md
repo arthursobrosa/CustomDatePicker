@@ -4,3 +4,5 @@
 #### - Font weight
 #### - Text color
 #### - Background color
+
+<img src="./README-images/appSnapshot.png" width="400" alt="App snapshot">
