@@ -4,6 +4,8 @@
 #### - Font weight
 #### - Text color
 #### - Background color
+#### - Corner radius
+#### - Stroke
 
 ---
 
