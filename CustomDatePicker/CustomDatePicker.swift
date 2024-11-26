@@ -186,6 +186,8 @@ final class CustomDatePicker: UIView {
 
 extension CustomDatePicker {
     private func setupUI() {
+        layer.masksToBounds = true
+        
         addSubview(innerDatePicker)
         addSubview(overlayView)
         addSubview(dateLabel)

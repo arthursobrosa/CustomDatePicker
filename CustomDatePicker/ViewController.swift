@@ -10,11 +10,16 @@ import UIKit
 class ViewController: UIViewController {
     // MARK: - UI Properties
 
+    /// Customize your date picker here
     private lazy var customDatePicker: CustomDatePicker = {
         let datePicker = CustomDatePicker()
         datePicker.delegate = self
         datePicker.datePickerMode = .date
         datePicker.fontWeight = .bold
+        datePicker.layer.borderWidth = 2
+        datePicker.layer.borderColor = UIColor.label.cgColor
+        datePicker.layer.cornerRadius = 10
+        datePicker.backgroundColor = .systemCyan
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         return datePicker
     }()
